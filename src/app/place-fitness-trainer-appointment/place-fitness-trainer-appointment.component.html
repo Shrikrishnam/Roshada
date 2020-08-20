@@ -1,0 +1,251 @@
+<style>
+fieldset {
+  margin: 0;
+  padding: 20px;
+  border: solid;
+  border-width: 0.5px;
+}
+.master {
+  background: linear-gradient(to bottom right, #005aa7, #fffde4);
+}
+</style>
+
+
+<div class="app-body master">
+  <main class="main d-flex">
+    <div class="container-fluid py-3">
+      <div class="card centered mx-auto w-75">
+        <div class="card-header">
+          <strong><h1>Place an Appointment</h1></strong>
+        </div>
+        <div class="card-body">
+          <form
+          [formGroup]="fitnessForm"
+          (ngSubmit)="onSubmit()"
+          class="text-center p-5"
+        >
+      
+          <div class="form-row mb-4">
+            <div class="col">
+              <label class="col-form-label" for="firstname">Firstname</label>
+              <input autofocus
+                type="text"
+                formControlName="firstname"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="First name"
+              />
+            </div>
+            <div class="col">
+              <label class="col-form-label" for="lastname">Lastname</label>
+              <input
+                type="text"
+                formControlName="lastname"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Last name"
+              />
+            </div>
+          </div>
+         <label class="col-form-label" for="email">Email</label>
+          <input 
+            type="email"
+            formControlName="email"
+            id="defaultRegisterFormEmail"
+            class="form-control mb-4"
+            placeholder="E-mail"
+          />
+          <label class="col-form-label" for="age">Age</label>
+          <input
+            type="number"
+            formControlName="age"
+            id="age"
+            class="form-control mb-4"
+            placeholder="Age"
+          />
+          <label for="phonenumber">Phone Number</label>
+          <input
+            type="number"
+            formControlName="phonenumber"
+            id="phonenumber"
+            class="form-control mb-4"
+            placeholder="Phone"
+          />
+          <br />
+          <!-- address -->
+          <fieldset>
+            <h2>Address</h2>
+            <div class="form-group">
+              <label for="street">Street</label>
+              <input
+                type="text"
+                class="form-control"
+                id="streetaddress"
+                formControlName="streetaddress"
+                placeholder="Must be between 8 to 25 characters"
+              />
+            </div>
+            <div class="form-group row">
+              <div class="form-group col-sm-6">
+                <label class="col-form-label" for="age">City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  formControlName="city"
+                  placeholder="Max limit is 20 characters"
+                />
+              </div>
+              <div class="form-group col-sm-6">
+                <label class="col-form-label" for="email">State</label>
+                <input
+                  type="text"
+                  id="state"
+                  class="form-control"
+                  formControlName="state"
+                  placeholder="Max limit is 20 characters"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="form-group col-sm-8">
+                <label class="col-form-label" for="age">Country</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="country"
+                  formControlName="country"
+                  placeholder="Max limit is 20 characters"
+                />
+              </div>
+              <div class="form-group col-sm-4">
+                <label class="col-form-label" for="email">Pincode</label>
+                <input
+                  type="number"
+                  id="pincode"
+                  class="form-control"
+                  formControlName="pincode"
+                  placeholder="Must be 6 digits"
+                />
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <div class="form-row mb-4">
+            <div class="col">
+              <label for="trainerpreference" class="form-control-label"
+                >Trainer Preference</label
+              >
+              <br />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="trainerpreference"
+                  id="inlineRadio1"
+                  value="Male Trainer"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Male Trainer</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="trainerpreference"
+                  id="inlineRadio2"
+                  value="Female Trainer"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Female Trainer</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="trainerpreference"
+                  id="inlineRadio3"
+                  value="No Preference"
+                />
+                <label class="form-check-label" for="inlineRadio3"
+                  >No Preference</label
+                >
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row mb-4">
+            <div class="col">
+              <label for="packages" class="form-control-label"
+              >Package</label
+            >
+            <br />
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                formControlName="packages"
+                id="500"
+                value=500
+              />
+              <label class="form-check-label" for="500"
+                >500</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input 
+                class="form-check-input"
+                type="radio"
+                formControlName="packages"
+                id="1000"
+                value=1000
+              />
+              <label class="form-check-label" for="1000"
+                >1000</label
+              >
+            </div>
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+             <div class="form-group">
+                 <label for="sel1">Physiotherapist:</label>
+                 <select class="form-control" id="physiotherapist" formControlName="physiotherapist">
+                   <option>Yes</option>
+                   <option>No</option>
+                 </select>
+               </div>
+            </div>
+           </div>
+          <div class="form-row mb-4">
+            <div class="col">
+             <div class="form-group">
+                <input
+                type="number"
+                formControlName="inr"
+                id="inr"
+                class="form-control mb-4"
+                placeholder="INR"
+              />
+               </div>
+            </div>
+            <div class="col">
+             <div class="form-group">
+                <input
+                type="number"
+                formControlName="paisa"
+                id="paisa"
+                class="form-control mb-4"
+                placeholder="Paisa"
+              />
+               </div>
+            </div>
+           </div>
+          <button class="btn btn-primary my-4 add-app" type="submit">
+            Submit
+          </button>
+        </form>
+          </div>
+      </div></div></main></div>

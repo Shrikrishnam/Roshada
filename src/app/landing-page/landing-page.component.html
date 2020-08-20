@@ -1,0 +1,34 @@
+<style>
+    .master {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(to bottom right, #005aa7, #fffde4);
+}
+
+a {
+  height: 50px;
+  width: 190px;
+  text-align: center;
+  line-height: 30px;
+}
+</style>
+<header class="master d-flex">
+    <div class="container text-center my-auto introtext">
+      <h1 class="mb-1 text-light">Intro text</h1>
+      <br />
+      <h3 class="mb-5">
+        You are less than 3 clicks away from tracking your fitness. Schedule yours
+        appointment with our best trainers now!
+      </h3>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" (click)="navpage()"
+        >Apply for trainer</a
+      >
+    </div>
+    <div class="overlay"></div>
+  </header>
+  

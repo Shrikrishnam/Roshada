@@ -1,0 +1,102 @@
+<style>
+  
+.master{
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 8rem;
+    background: linear-gradient(to bottom right, #28313b, #485461);
+  }
+  
+</style>
+<div class="master">
+  <div class="card centered mx-auto">
+        <div class="row ">
+          <div class="col ">
+            <table
+              class="table table-responsive-sm table-hover table-outline mb-0"
+            >
+              <thead class="thead-light">
+                <tr>
+                  <th class="text-center h1">Sl NO</th>
+                  <th class="text-center h2">Name</th>
+                  <th class="text-center h3">Address</th>
+                  <th class="text-center h4">City</th>
+                  <th class="text-center h5">Package</th>
+                  <th class="text-center h6">Trainer Preference</th>
+                  <th class="text-center h7">Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of allApps; let i = index">
+                  <td class="text-center">{{ i + 1 }}.</td>
+                  <td class="text-center">
+                    {{ a.firstname }} {{ a.lastname }}
+                  </td>
+                  <td class="text-center">{{ a.streetaddress }}, {{a.country}}-{{a.pincode}}</td>
+
+                  <td class="text-center">{{ a.city }}</td>
+                  <td class="text-center">
+                    {{a.packages }}
+                  </td>
+                  <td class="text-center">{{ a.trainerpreference }}</td>
+                  <td class="text-center">{{ a.phonenumber }}</td>
+                  <td class="text-center">
+                    <a
+                      href="../place-fitness-trainer-appointment/edit/{{ a.id }}"
+                      role="button"
+                      class="btn btn-success"
+                    >
+                      Edit
+                    </a>
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      (click)="delete(a.id)"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  </div>
+</div>
+
+
+  
+  <!-- <div style="overflow-x: auto;">
+    <table>
+      <tr>
+        <th class="h1">Sl NO</th>
+        <th class="h2">Name</th>
+        <th class="h3">Address</th>
+        <th class="h4">City</th>
+        <th class="h5">Package</th>
+        <th class="h6">Trainer Preference</th>
+        <th class="h7">Phone</th>
+        <!-- <th>Action</th>
+      </tr>
+      <tr *ngFor="let a of allApps; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ a.firstname }} {{ a.lastname }}</td>
+        <td>{{ a.streetaddress }}</td>
+        <td>{{ a.city }}</td>
+        <td>{{ a.packages }}</td>
+        <td>{{ a.trainerpreference }}</td>
+        <td>{{ a.phonenumber }}</td>
+        <td>
+          <button
+            routerLink="../place-fitness-trainer-appointment/edit/{{ a.id }}"
+          >
+            Edit
+          </button>
+          <button (click)="delete(a.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div> -->
+  
